@@ -8,7 +8,10 @@ type DiscountMode = "pct" | "amount";
 
 const LANGUAGE_OPTIONS: Language[] = ["en", "bm"];
 
-const num = (value: unknown, fallback = 0) => (Number.isFinite(+value) ? +value : fallback);
+const num = (value: number | string | null | undefined, fallback = 0) => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
+};
 const clamp01 = (value: number) => Math.max(0, Math.min(1, value));
 const pctToUnit = (value: number) => clamp01(value / 100);
 const unitToPct = (value: number) => (Number.isFinite(value) ? value * 100 : 0);
