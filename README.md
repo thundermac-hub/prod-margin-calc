@@ -17,3 +17,10 @@ npm run build
 ```bash
 npm run preview
 ```
+
+## Deploy with Coolify (Dockerfile)
+Use the Dockerfile in this repo.
+
+Settings:
+- Build pack: `Dockerfile`
+- Port: `80`
